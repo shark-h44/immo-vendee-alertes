@@ -1,0 +1,17 @@
+services:
+  immo-vendee:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /app
+    env_file:
+      - .env
+    environment:
+      CONFIG_PATH: /app/config.yml
+      DB_PATH: /app/data/annonces.sqlite
+      OUTPUT_PATH: /app/output/rapport.html
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+      - ./config.yml:/app/config.yml:ro
+    restart: "no"
