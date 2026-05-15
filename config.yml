@@ -1,0 +1,41 @@
+projet:
+  nom: "Résidence secondaire Vendée"
+
+criteres:
+  villes:
+    - "Saint-Jean-de-Monts"
+    - "Saint-Hilaire-de-Riez"
+    - "Saint-Gilles-Croix-de-Vie"
+    - "Le Fenouiller"
+    - "Notre-Dame-de-Riez"
+    - "Brétignolles-sur-Mer"
+    - "Soullans"
+    - "Challans"
+  prix_max: 95000
+  surface_min: 30
+  prix_m2_cible: 2500
+
+mail:
+  days_back: 30
+  mark_as_seen: false
+  allowed_senders:
+    - "leboncoin"
+    - "seloger"
+    - "ouestfrance"
+    - "pap"
+    - "bienici"
+
+travaux:
+  cout_m2:
+    leger: 200
+    moyen: 650
+    lourd: 1200
+
+scoring:
+  poids:
+    prix_total: 15
+    prix_m2: 25
+    surface: 10
+    travaux: 20
+    dpe: 10
+    potentiel_negociation: 20
