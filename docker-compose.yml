@@ -3,15 +3,29 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: immo-vendee-alertes
     working_dir: /app
-    env_file:
-      - .env
     environment:
       CONFIG_PATH: /app/config.yml
       DB_PATH: /app/data/annonces.sqlite
       OUTPUT_PATH: /app/output/rapport.html
+
+      IMAP_HOST: ${IMAP_HOST}
+      IMAP_PORT: ${IMAP_PORT}
+      IMAP_USER: ${IMAP_USER}
+      IMAP_PASSWORD: ${IMAP_PASSWORD}
+      IMAP_FOLDER: ${IMAP_FOLDER}
+      MARK_EMAILS_AS_SEEN: ${MARK_EMAILS_AS_SEEN}
     volumes:
-      - ./data:/app/data
-      - ./output:/app/output
-      - ./config.yml:/app/config.yml:ro
+      - /srv/docker/immo-vendee/data:/app/data
+      - /srv/docker/immo-vendee/output:/app/output
     restart: "no"
+
+  immo-vendee-web:
+    image: nginx:alpine
+    container_name: immo-vendee-web
+    volumes:
+      - /srv/docker/immo-vendee/output:/usr/share/nginx/html:ro
+    ports:
+      - "8088:80"
+    restart: unless-stopped
