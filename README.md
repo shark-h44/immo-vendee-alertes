@@ -92,10 +92,10 @@ python app/main.py --eml-file samples/alerte_sample_1.eml --debug
 ## 10. Création d'alertes email sur les portails
 
 Créer des alertes avec:
-- zones: Saint-Jean-de-Monts, Saint-Hilaire-de-Riez, Saint-Gilles-Croix-de-Vie, Le Fenouiller, Notre-Dame-de-Riez, Brétignolles-sur-Mer, Soullans, Challans,
+- zones: 
 - type: maison / appartement,
-- plafond: 95 000 €,
-- surface mini: 30 m².
+- plafond: 0 €,
+- surface mini: 0 m².
 
 Configurer l'envoi vers la boîte IMAP dédiée.
 
