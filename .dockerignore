@@ -1,0 +1,20 @@
+# Git / VCS
+.git
+.gitignore
+
+# Local envs / cache
+.env
+.venv
+__pycache__
+*.pyc
+*.pyo
+.pytest_cache
+
+# Data/generated artifacts
+*.sqlite
+data/*.sqlite
+output/*.html
+
+# Misc
+tests/cache
+README.md
